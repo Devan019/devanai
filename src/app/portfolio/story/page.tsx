@@ -1,14 +1,10 @@
-
-
-import Hero from '@/components/landing'
-
+import { MyLife } from '@/components/MyLife'
 import React from 'react'
-
 
 const page = () => {
   return (
     <div>
-      <Hero />
+      <MyLife />
     </div>
   )
 }

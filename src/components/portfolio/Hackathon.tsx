@@ -6,16 +6,11 @@ import {
   FiSearch,
   FiFilter,
   FiX,
-  FiCalendar,
   FiMapPin,
-  FiAward,
-  FiTrendingUp,
-  FiRefreshCw,
   FiChevronLeft,
   FiChevronRight
 } from 'react-icons/fi';
 import { hackathonsData } from '@/data/hackathon.data';
-import { Spotlight } from '../ui/spotlight-new';
 import { HeroHighlight } from '../ui/hero-highlight';
 
 const HackathonsPage = () => {
@@ -116,14 +111,7 @@ const HackathonsPage = () => {
     })
     .sort(sortHackathons);
 
-  const categories = [
-    { id: 'all', name: 'All Hackathons', icon: <FiRefreshCw className="w-4 h-4" /> },
-    { id: 'ai', name: 'AI/ML', icon: <FiTrendingUp className="w-4 h-4" /> },
-    { id: 'web3', name: 'Web3', icon: <FiAward className="w-4 h-4" /> },
-    { id: 'social-good', name: 'Social Good', icon: <FiMapPin className="w-4 h-4" /> },
-    { id: 'fintech', name: 'FinTech', icon: <FiCalendar className="w-4 h-4" /> }
-  ];
-
+ 
   // Loading skeleton
   const HackathonSkeleton = () => (
     <div className="rounded-xl bg-gray-200 dark:bg-gray-800 animate-pulse h-[520px] min-w-[350px]">
@@ -172,7 +160,7 @@ const HackathonsPage = () => {
                 My Hackathon Journey
               </h1>
               <p className="text-lg text-white/90  mx-auto leading-relaxed">
-                Showcasing innovative projects from hackathons I've participated in around the world.
+                Showcasing innovative projects from hackathons I{"'"}ve participated in around the world.
                 Each project represents a unique challenge tackled in 24-72 hours.
               </p>
 

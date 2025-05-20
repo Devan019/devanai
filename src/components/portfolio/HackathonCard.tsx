@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from 'next-themes';
-import { FiGithub, FiExternalLink, FiArrowRight, FiArrowLeft, FiAward, FiUsers, FiCode } from 'react-icons/fi';
+import { FiGithub, FiExternalLink, FiArrowRight, FiArrowLeft, FiUsers, FiCode } from 'react-icons/fi';
 
 interface HackathonCardProps {
   hackathon: {
@@ -32,9 +32,6 @@ const HackathonCard: React.FC<HackathonCardProps> = ({
   deployLink,
   teamMembers = [],
   technologies = [],
-  imageUrl = "/hackathon-placeholder.jpg",
-  category = "",
-  award = "",
   duration = "48 hours",}
 }) => {
   const [isFlipped, setIsFlipped] = useState(false);

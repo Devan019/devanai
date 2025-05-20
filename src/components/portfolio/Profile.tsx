@@ -74,7 +74,7 @@ export default function ProfilePage() {
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
             variants={itemVariants}
           >
-            Hey, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">Web Dev</span>
+            Hey, I{"'"}m <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">Web Dev</span>
           </motion.h1>
 
           {/* Bio with animated text */}

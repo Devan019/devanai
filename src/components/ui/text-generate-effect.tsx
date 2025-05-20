@@ -8,17 +8,15 @@ export const TextGenerateEffect = ({
   className,
   filter = true,
   duration = 0.5,
-  color = "#fff"
 }: {
   words: string;
   className?: string;
   filter?: boolean;
   duration?: number;
-  color?: string
 }) => {
   const [scope, animate] = useAnimate();
 
-  let wordsArray = words.split(" ");
+  const wordsArray = words.split(" ");
   useEffect(() => {
     animate(
       "span",

@@ -32,7 +32,7 @@ const Hero = () => {
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
           variants={itemVariants}
         >
-          Hey, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">Anime Dev</span>
+          Hey, I{"'"}m <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">Anime Dev</span>
         </motion.h1>
 
         <motion.p

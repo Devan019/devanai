@@ -7,7 +7,7 @@ import { useLenis } from '@/providers/lennisprovider'
 
 import React from 'react'
 
-const layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const {scrollY} = useLenis();
   return (
     <div className='relative'>
@@ -20,4 +20,4 @@ const layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   )
 }
 
-export default layout
+export default Layout

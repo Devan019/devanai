@@ -6,11 +6,10 @@ import React, { useEffect, useRef } from "react";
 export const ParticleNetwork = ({
   className = "",
   particleColor = "#8B5CF6",
-  interactive = true,
+
 }: {
   className?: string;
   particleColor?: string;
-  interactive?: boolean;
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 

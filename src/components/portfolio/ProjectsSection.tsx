@@ -40,7 +40,7 @@ const ProjectsSection = () => {
 
   const handlePageChange = (newPage: number) => {
     if (newPage >= 1 && newPage <= totalPages) {
-      let idx = (newPage - 1) * PROJECTS_PER_PAGE;
+      const idx = (newPage - 1) * PROJECTS_PER_PAGE;
       setHoveredProject(filteredProjects[idx].id);
       setActivePage(newPage);
     }

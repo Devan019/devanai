@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { Html } from '@react-three/drei';
 import * as THREE from 'three';
@@ -161,5 +161,5 @@ const TechMarker: React.FC<TechMarkerProps> = React.memo(({ tech, isHovered, set
     </group>
   );
 });
-
+TechMarker.displayName = "TechMarker";
 export default Earth;

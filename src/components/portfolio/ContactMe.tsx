@@ -1,26 +1,23 @@
 "use client"
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { useTheme } from 'next-themes';
-import { FiMail, FiPhone, FiMapPin, FiInstagram, FiTwitter, FiLinkedin, FiGithub } from 'react-icons/fi';
+import {  FiPhone, FiMapPin, FiInstagram, FiTwitter, FiLinkedin, FiGithub } from 'react-icons/fi';
 import { AuroraBackground } from '../ui/aurora-background';
 import { Label } from '../ui/label';
 import { Input } from '../ui/input';
 import { Textarea } from '../ui/Textarea';
-import { WavyBackground } from '../ui/wavy-background';
 import { MailIcon } from 'lucide-react';
 
 export default function ContactPage() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-  const { theme } = useTheme();
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission
-    console.log({ name, email, message });
-  };
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   // Handle form submission
+  //   console.log({ name, email, message });
+  // };
 
   return (
     // <WavyBackground className=" w-screen mx-auto min-h-screen overflow-x-hidden">

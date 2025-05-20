@@ -5,12 +5,20 @@ import { toast, Toaster } from "sonner";
 import { ButtonsCard } from "../ui/bntCard";
 
 export function TailwindcssButtons() {
-  const copy = (button: any) => {
+  type ButtonType = {
+    name: string;
+    description: string;
+    component: React.ReactElement;
+    showDot?: boolean;
+    code?: string;
+  };
+
+  const copy = (button: ButtonType) => {
     if (button.code) {
       copyToClipboard(button.code);
       return;
     }
-    let buttonString = reactElementToJSXString(button.component);
+    const buttonString = reactElementToJSXString(button.component);
 
     if (buttonString) {
       const textToCopy = buttonString;

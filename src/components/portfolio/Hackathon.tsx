@@ -9,7 +9,7 @@ import {
   FiMapPin,
 } from 'react-icons/fi';
 import { hackathonsData } from '@/data/hackathon.data';
-import { HeroHighlight } from '../ui/hero-highlight';
+// import { HeroHighlight } from '../ui/hero-highlight';
 
 // Import Swiper styles and modules
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -118,7 +118,7 @@ const HackathonsPage = () => {
               My Hackathon Journey
             </h1>
             <p className="text-lg text-white/90 mx-auto max-w-2xl leading-relaxed">
-              Showcasing innovative projects from hackathons I've participated in around the world.
+              Showcasing innovative projects from hackathons I{"'"}ve participated in around the world.
               Each project represents a unique challenge tackled in 24-72 hours.
             </p>
           </div>
@@ -276,7 +276,7 @@ const HackathonsPage = () => {
                       transition={{ duration: 0.3 }}
                       className="flex-shrink-0 min-w-full"
                     >
-                      <HackathonCard hackathon={hackathon} />
+                      <HackathonCard {...hackathon} />
                     </motion.div>
                   </SwiperSlide>
                 ))}

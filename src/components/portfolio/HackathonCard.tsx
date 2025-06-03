@@ -1,47 +1,32 @@
 "use client"
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from 'next-themes';
 import { FiGithub, FiExternalLink, FiArrowRight, FiArrowLeft, FiUsers, FiCode } from 'react-icons/fi';
+import { Hackathon } from '@/data/hackathon.data';
 
-interface HackathonCardProps {
-  hackathon: {
-    title: string;
-    location: string;
-    date: string;
-    problemStatement: string;
-    projectDescription: string;
-    githubLink: string;
-    deployLink: string;
-    teamMembers: string[];
-    technologies: string[];
-    imageUrl: string;
-    category: string;
-    award?: string;
-    duration?: string;
-  }
-}
 
-const HackathonCard: React.FC<HackathonCardProps> = ({
-  hackathon: { title,
-    location,
-    date,
-    problemStatement,
-    projectDescription,
-    githubLink,
-    deployLink,
-    teamMembers = [],
-    technologies = [],
-    duration = "48 hours", }
+
+
+const HackathonCard: React.FC<Hackathon> = ({ title,
+  location,
+  date,
+  problemStatement,
+  projectDescription,
+  githubLink,
+  deployLink,
+  teamMembers = [],
+  technologies = [],
+  
 }) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const { theme } = useTheme();
-  const [isMounted, setIsMounted] = useState(false);
+  // const [ setIsMounted] = useState(false);
 
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
+  // useEffect(() => {
+  //   setIsMounted(true);
+  // }, []);
 
   const flipCard = () => {
     setIsFlipped((prev) => !prev);
@@ -56,9 +41,9 @@ const HackathonCard: React.FC<HackathonCardProps> = ({
     pill: "bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300"
   };
 
-  const gradientStyle = isMounted
-    ? ` ${theme === 'dark' ? colorScheme.dark : colorScheme.light}`
-    : 'bg-gray-200 dark:bg-gray-800';
+  // const gradientStyle = isMounted
+  //   ? ` ${theme === 'dark' ? colorScheme.dark : colorScheme.light}`
+  //   : 'bg-gray-200 dark:bg-gray-800';
 
   return (
     <motion.div
@@ -100,8 +85,7 @@ const HackathonCard: React.FC<HackathonCardProps> = ({
                 <h2 className="text-2xl font-bold text-white">{title}</h2>
                 <div className="flex items-center gap-2 mt-1">
                   <p className="text-sm text-gray-200">{date}</p>
-                  <span className="w-1 h-1 rounded-full bg-gray-400"></span>
-                  <p className="text-sm text-gray-200">{duration}</p>
+                  
                 </div>
               </div>
 

@@ -1,17 +1,17 @@
 "use client"
-import { useState } from 'react';
+// import { useState } from 'react';
 import { motion } from 'framer-motion';
 import {  FiPhone, FiMapPin, FiInstagram, FiTwitter, FiLinkedin, FiGithub } from 'react-icons/fi';
 import { AuroraBackground } from '../ui/aurora-background';
-import { Label } from '../ui/label';
-import { Input } from '../ui/input';
-import { Textarea } from '../ui/Textarea';
+// import { Label } from '../ui/label';
+// import { Input } from '../ui/input';
+// import { Textarea } from '../ui/Textarea';
 import { MailIcon } from 'lucide-react';
 
 export default function ContactPage() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  // const [name, setName] = useState('');
+  // const [email, setEmail] = useState('');
+  // const [message, setMessage] = useState('');
 
   // const handleSubmit = (e: React.FormEvent) => {
   //   e.preventDefault();

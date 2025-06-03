@@ -2,7 +2,7 @@
 import Navbar from '@/components/NavBar'
 import MouseScrollIndicator from '@/components/scrollicon'
 
-import StoryButton from '@/components/storyButton'
+// import StoryButton from '@/components/storyButton'
 import { useLenis } from '@/providers/lennisprovider'
 
 import React from 'react'

@@ -1,7 +1,7 @@
 // hackathons.ts
 
+// types/hackathon.d.ts
 export interface Hackathon {
-  category: string;
   title: string;
   location: string;
   date: string;
@@ -11,7 +11,10 @@ export interface Hackathon {
   deployLink: string;
   teamMembers: string[];
   technologies: string[];
-  imageUrl: string;
+  imageUrl?: string; // Make optional since it's not used in the card
+  category?: string; // Make optional since it's not used in the card
+  award?: string;
+  duration?: string;
 }
 
 export const hackathonsData: Hackathon[] = [

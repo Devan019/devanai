@@ -56,7 +56,7 @@ export function MyLife() {
       ),
     },
     {
-      title: "GDG Community Lead",
+      title: "GDG Web team member",
       period: "Sep 2024 - Present",
       url: "/characters/1st.gif",
       content: (

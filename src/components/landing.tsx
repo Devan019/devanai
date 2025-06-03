@@ -38,7 +38,7 @@ const Hero = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
-            Explore My  <FlipWords duration={2000} words={words}  className='dark:text-yellow-400'/> 
+            Explore My  <FlipWords duration={2000} words={words}  className='text-yellow-400'/> 
           </h1>
           
           <motion.div

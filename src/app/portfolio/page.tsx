@@ -6,17 +6,17 @@ import Skills from "@/components/portfolio/Skill";
 
 const page = () => {
   return (
-    <div className="overflow-x-hidden">
-      <div id="profile">
+    <div className="min-h-screen ">
+      <div id="profile" className="min-h-screen relative">
         <Profile />
       </div>
-      <div id="projects">
+      <div id="projects" className="min-h-screen relative">
         <ProjectsSection />
       </div>
       <div id="skills">
         <Skills />
       </div>
-      <div id="hackathon">
+      <div id="hackathon" className="relative min-h-screen m-4">
         <HackathonsPage />
       </div>
       <div id="contact" className="relative ">

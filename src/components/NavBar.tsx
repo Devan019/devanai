@@ -113,13 +113,13 @@ const Navbar = () => {
 
   return (
     <motion.nav
-      className={`fixed w-full z-[99] transition-all duration-300 ${scrolled ? 'py-2' : 'py-4'} dark:bg-black/10 dark:backdrop-blur-md bg-white/80 backdrop-blur-md'}`}
-      initial={{ y: -100 }}
+      className={`fixed top-0  md:w-full w-screen z-[99] transition-all duration-300 ${scrolled ? 'py-2' : 'py-4'} dark:bg-black/10 dark:backdrop-blur-md bg-white/80 backdrop-blur-md'}`}
+      // initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+      <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex w-full  justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
             <motion.div
@@ -171,7 +171,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
+          <div className="md:hidden flex items-center ">
             <motion.button
               className={`p-2 rounded-md ${theme == "dark" ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'} focus:outline-none`}
               onClick={() => setMenuOpen(!menuOpen)}
@@ -192,7 +192,7 @@ const Navbar = () => {
       {/* Mobile Navigation */}
       {menuOpen && (
         <motion.div
-          className={`md:hidden bg-gray-800 shadow-lg`}
+          className={`md:hidden bg-gray-800 shadow-lg `}
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 'auto' }}
           exit={{ opacity: 0, height: 0 }}

@@ -15,7 +15,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       {children}
       {/* <ThemeToggle /> */}
       <MouseScrollIndicator scrollY={scrollY}  threshold={2450}/>
-      <StoryButton />
+      {/* <StoryButton /> */}
     </div>
   )
 }

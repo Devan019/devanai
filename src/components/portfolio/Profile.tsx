@@ -82,7 +82,7 @@ export default function ProfilePage() {
 
           {/* Bio with animated text */}
           <TextGenerateEffect
-            words="I'm a second-year student passionate about development, competitive programming, and building smart solutions. I'm currently growing my skills in frontend, backend, databases, and APIs, and I love using animations to make user experiences more engaging."
+            words="I'm a third-year student passionate about development, competitive programming, and building smart solutions. I'm currently growing my skills in frontend, backend, databases, and APIs, and I love using animations to make user experiences more engaging."
             className="text-purple-500 dark:text-gray-300 text-base sm:text-lg leading-relaxed mb-4 md:mb-6"
           />
         </div>

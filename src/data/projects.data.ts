@@ -98,7 +98,7 @@ export const projects: Project[] = [
   {
     id: 15,
     title: "Snip",
-    description: "A modern snippet manager for developers, supporting syntax highlighting and database persistence.",
+    description: "Thread like application",
     tags: ["Snippets", "Code Management", "Prisma", "Postgres"],
     skills: ["Next.js", "Prisma", "Postgres", "TypeScript"],
     imageUrl: "/images/projects/snip.jpg", // Add this asset
@@ -109,7 +109,7 @@ export const projects: Project[] = [
     title: "AI Code Editor",
     description: "An AI-assisted code editor that helps developers with real-time suggestions, completions, and debugging support.",
     tags: ["AI", "Code Editor", "Developer Tools"],
-    skills: ["Next.js", "Prisma", "Postgres", "TypeScript", "AI"],
+    skills: ["Next.js", "TypeScript", "AI"],
     imageUrl: "/images/projects/ai-code-editor.jpg", // Add this asset
     githubUrl: "https://github.com/Devan019/ai-code-editor"
   }

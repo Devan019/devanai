@@ -1,7 +1,7 @@
 "use client"
 // import { useState } from 'react';
 import { motion } from 'framer-motion';
-import {  FiPhone, FiMapPin, FiInstagram, FiTwitter, FiLinkedin, FiGithub, FiYoutube } from 'react-icons/fi';
+import {  FiPhone, FiMapPin, FiLinkedin, FiGithub, FiYoutube } from 'react-icons/fi';
 import { AuroraBackground } from '../ui/aurora-background';
 // import { Label } from '../ui/label';
 // import { Input } from '../ui/input';

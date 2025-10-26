@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { projects, skillCategories, Project } from "@/data/projects.data";
-import { TextGenerateEffect } from "../ui/text-generate-effect";
 import { HoverBorderGradient } from "../ui/hover-border-gradient";
 import { BackgroundGradient } from "../ui/background-gradient";
 import { SparklesCore } from "../ui/sparkles";

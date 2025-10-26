@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+
 import { motion } from 'framer-motion';
-import { FiSearch, FiX, FiMapPin, FiAward, FiCalendar, FiCode, FiGithub } from 'react-icons/fi';
+import { FiSearch, FiMapPin, FiAward, FiCalendar, FiCode, FiGithub } from 'react-icons/fi';
 
 // Import Swiper styles and modules
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -153,25 +153,7 @@ const HackathonCard = ({ title, location, date, projectDescription, technologies
 const HackathonsPage = () => {
   
 
-  const HackathonSkeleton = () => (
-    <div className="rounded-xl bg-gray-800 animate-pulse h-[400px] p-6">
-      <div className="space-y-4">
-        <div className="h-6 w-3/4 bg-gray-700 rounded"></div>
-        <div className="h-4 w-1/2 bg-gray-700 rounded"></div>
-        <div className="h-4 w-1/3 bg-gray-700 rounded"></div>
-        <div className="space-y-2 pt-4">
-          <div className="h-4 w-full bg-gray-700 rounded"></div>
-          <div className="h-4 w-full bg-gray-700 rounded"></div>
-          <div className="h-4 w-2/3 bg-gray-700 rounded"></div>
-        </div>
-        <div className="flex gap-2 pt-4">
-          {[...Array(4)].map((_, i) => (
-            <div key={i} className="h-6 w-20 bg-gray-700 rounded-full"></div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+  
 
   return (
     <HeroHighlight className='max-w-full min-h-screen'>
@@ -224,7 +206,7 @@ const HackathonsPage = () => {
                 </div>
                 <h3 className="text-2xl font-medium text-white mb-2">No hackathons found</h3>
                 <p className="text-gray-400 max-w-md">
-                  Try adjusting your search terms or filters to find what you're looking for.
+                  Try adjusting your search terms or filters to find what you are looking for.
                 </p>
               </div>
             )}
@@ -242,17 +224,14 @@ const HackathonsPage = () => {
           border-radius: 50% !important;
           border: 1px solid rgba(168, 85, 247, 0.3) !important;
         }
-
         .swiper-button-next:after,
         .swiper-button-prev:after {
           font-size: 20px !important;
         }
-
         .swiper-pagination-bullet {
           background: #a855f7 !important;
           opacity: 0.5 !important;
         }
-
         .swiper-pagination-bullet-active {
           opacity: 1 !important;
         }

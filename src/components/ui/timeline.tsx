@@ -35,12 +35,11 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start end", "end start"], // Adjusted offsets for better detection
+    offset: ["start end", "end start"], 
   });
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    // Only update when timeline is in view
-    if (latest > 0.2 && latest < 0.85) {
+    if (latest > 0.18 && latest < 0.95) {
       setIsInView(true);
       const newIndex = Math.min(
         data.length - 1,
@@ -57,11 +56,11 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   return (
     <div
-      className="w-full font-sans md:px-10 relative"
+      className="w-full font-sans md:px-10 relative "
       ref={containerRef}
     >
       
-        {/* Single fixed character image that updates based on activeIndex */}
+        
         {isInView && data[activeIndex]?.url && (
           <div className="fixed right-10 top-1/2 -translate-y-1/2 z-50 hidden xl:block w-64 h-64">
             <AnimatePresence mode="wait">
@@ -95,10 +94,10 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         )}
 
         <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
-          <h2 className="text-lg md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
+          <h2 className="text-lg md:text-4xl mb-4 text-white max-w-4xl">
             My Evolution Journey
           </h2>
-          <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm">
+          <p className=" text-neutral-300 text-sm md:text-base max-w-sm">
             From early beginnings to current achievements - a visual story of growth.
           </p>
         </div>
@@ -107,14 +106,14 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           {data.map((item, index) => (
             <motion.div
               key={index}
-              className="flex flex-col md:flex-row justify-start pt-10 md:pt-40 gap-6 md:gap-10"
+              className="flex flex-col md:flex-row justify-start pt-10 md:pt-40 gap-6 md:gap-10 min-h-128"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <div className="sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
-                <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-white dark:bg-black flex items-center justify-center border-2 border-purple-500">
+                <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-black flex items-center justify-center border-2 border-purple-500">
                   <motion.div
                     animate={{
                       scale: [1, 1.2, 1],
@@ -128,7 +127,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                     className="h-4 w-4 rounded-full bg-purple-500 p-2"
                   />
                 </div>
-                <h3 className="hidden md:block text-xl md:pl-20 md:text-3xl font-bold text-neutral-700 dark:text-neutral-300">
+                <h3 className="hidden md:block text-xl md:pl-20 md:text-3xl font-bold text-neutral-300">
                   {item.title}
                 </h3>
               </div>
@@ -136,20 +135,20 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               <div className="relative pl-14 md:pl-4 w-full">
                 <div className="flex flex-col md:flex-row gap-4">
                   <div className="flex-1">
-                    <h3 className="md:hidden block text-2xl mb-4 text-left font-bold text-neutral-700 dark:text-neutral-300">
+                    <h3 className="md:hidden block text-2xl mb-4 text-left font-bold text-neutral-300">
                       {item.title}
                     </h3>
-                    <p className="text-sm text-purple-600 dark:text-purple-400 mb-2">
+                    <p className="text-xl text-purple-400 mb-2">
                       {item.period}
                     </p>
                     {item.highlight && (
-                      <div className="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg mb-4 border-l-4 border-purple-500">
-                        <p className="font-medium text-purple-800 dark:text-purple-200">
+                      <div className="bg-purple-900/20 p-4 rounded-lg mb-4 border-l-4 border-purple-500 ">
+                        <p className="font-medium text-purple-200">
                           {item.highlight}
                         </p>
                       </div>
                     )}
-                    <div className="prose dark:prose-invert">{item.content}</div>
+                    <div className="prose-invert">{item.content}</div>
                     {item.skills && (
                       <div className="mt-4 flex flex-wrap gap-2">
                         {item.skills.map((skill, i) => (
@@ -158,7 +157,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                             initial={{ opacity: 0, y: 10 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: i * 0.1 }}
-                            className="px-3 py-1 text-xs rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300"
+                            className="px-3 py-1 text-xs rounded-full bg-neutral-800 text-neutral-300"
                           >
                             {skill}
                           </motion.span>
@@ -176,7 +175,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             style={{
               height: height + "px",
             }}
-            className="absolute md:left-8 left-8 top-0 overflow-hidden w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-neutral-200 dark:via-neutral-700 to-transparent to-[99%] [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)]"
+            className="absolute md:left-8 left-8 top-0 overflow-hidden w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-neutral-700 to-transparent to-[99%] [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)]"
           >
             <motion.div
               style={{

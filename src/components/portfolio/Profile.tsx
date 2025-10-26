@@ -17,14 +17,13 @@ export default function ProfilePage() {
         className={cn(
           "absolute inset-0",
           "[background-size:80px_80px]",
-          "[background-image:linear-gradient(to_right,#e4e4e7_1px,transparent_1px),linear-gradient(to_bottom,#e4e4e7_1px,transparent_1px)]",
-          "dark:[background-image:linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)]",
+          "[background-image:linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)]",
         )}
       />
       <Spotlight />
       
       {/* Main Content Container */}
-      <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div>
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center  [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] bg-black"></div>
       
       <div className="text-white relative z-10 w-full max-w-6xl mx-auto flex flex-col md:flex-row gap-4 md:gap-8 px-4 py-8 md:p-6 bg-transparent rounded-2xl">
 
@@ -54,7 +53,7 @@ export default function ProfilePage() {
           <div className="mt-4 md:mt-6 text-center">
             <TextGenerateEffect
               words="Devan Chauhan"
-              className="text-2xl sm:text-3xl font-bold bg-clip-text text-gray-800/80 dark:text-white bg-gradient-to-b dark:from-purple-200 dark:to-purple-600"
+              className="text-2xl sm:text-3xl font-bold bg-clip-text text-white bg-gradient-to-b from-purple-200 to-purple-600"
             />
           </div>
         </div>
@@ -82,8 +81,8 @@ export default function ProfilePage() {
 
           {/* Bio with animated text */}
           <TextGenerateEffect
-            words="I'm a third-year student passionate about development, competitive programming, and building smart solutions. I'm currently growing my skills in frontend, backend, databases, and APIs, and I love using animations to make user experiences more engaging."
-            className="text-purple-500 dark:text-gray-300 text-base sm:text-lg leading-relaxed mb-4 md:mb-6"
+            words="I'm a third-year student passionate about development, AI/ML, and competitive programming. I love building smart, scalable solutions and continuously improving my skills in frontend, backend, databases, and APIs. I'm also exploring artificial intelligence and machine learning to create intelligent, data-driven applications — and I enjoy using animations to make user experiences more engaging and interactive"
+            className="text-gray-300 text-sm  sm:text-lg leading-relaxed mb-4 md:mb-6"
           />
         </div>
       </div>

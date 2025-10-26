@@ -124,7 +124,7 @@ export const buttons = [
     name: "Unapologetic",
     description: "Unapologetic button with perfect corners",
     component: (
-      <button className="px-8 py-2 border border-black bg-transparent text-black  dark:border-white relative group transition duration-200">
+      <button className="px-8 py-2 border  bg-transparent text-black  border-white relative group transition duration-200">
         <div className="absolute -bottom-2 -right-2 bg-yellow-300 h-full w-full -z-10 group-hover:bottom-0 group-hover:right-0 transition-all duration-200" />
         <span className="relative">Unapologetic</span>
       </button>
@@ -160,7 +160,7 @@ export const buttons = [
     name: "Brutal",
     description: "Brutal button for your website",
     component: (
-      <button className="px-8 py-0.5  border-2 border-black dark:border-white uppercase bg-white text-black transition duration-200 text-sm shadow-[1px_1px_rgba(0,0,0),2px_2px_rgba(0,0,0),3px_3px_rgba(0,0,0),4px_4px_rgba(0,0,0),5px_5px_0px_0px_rgba(0,0,0)] dark:shadow-[1px_1px_rgba(255,255,255),2px_2px_rgba(255,255,255),3px_3px_rgba(255,255,255),4px_4px_rgba(255,255,255),5px_5px_0px_0px_rgba(255,255,255)] ">
+      <button className="px-8 py-0.5  border-2 border-white uppercase bg-white text-black transition duration-200 text-sm shadow-[1px_1px_rgba(255,255,255),2px_2px_rgba(255,255,255),3px_3px_rgba(255,255,255),4px_4px_rgba(255,255,255),5px_5px_0px_0px_rgba(255,255,255)] ">
         Brutal
       </button>
     ),
@@ -257,7 +257,7 @@ export const buttons = [
     name: "Playlist",
     description: "Playlist button for your website",
     component: (
-      <button className="shadow-[inset_0_0_0_2px_#616467] text-black px-12 py-4 rounded-full tracking-widest uppercase font-bold bg-transparent hover:bg-[#616467] hover:text-white dark:text-neutral-200 transition duration-200">
+      <button className="shadow-[inset_0_0_0_2px_#616467]  px-12 py-4 rounded-full tracking-widest uppercase font-bold bg-transparent hover:bg-[#616467] hover:text-white text-neutral-200 transition duration-200">
         Playlist
       </button>
     ),
@@ -275,7 +275,7 @@ export const buttons = [
     name: "Figma Outline",
     description: "Figma Outline button for your website",
     component: (
-      <button className="shadow-[0_0_0_3px_#000000_inset] px-6 py-2 bg-transparent border border-black dark:border-white dark:text-white text-black rounded-lg font-bold transform hover:-translate-y-1 transition duration-400">
+      <button className="shadow-[0_0_0_3px_#000000_inset] px-6 py-2 bg-transparent border border-white text-white  rounded-lg font-bold transform hover:-translate-y-1 transition duration-400">
         Figma Outline
       </button>
     ),

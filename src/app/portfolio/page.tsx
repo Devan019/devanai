@@ -1,3 +1,4 @@
+"use client"
 import ContactPage from "@/components/portfolio/ContactMe";
 import HackathonsPage from "@/components/portfolio/Hackathon";
 import Profile from "@/components/portfolio/Profile";
@@ -6,7 +7,7 @@ import Skills from "@/components/portfolio/Skill";
 
 const page = () => {
   return (
-    <div className="min-h-screen ">
+    <div className="min-h-screen overflow-x-hidden scroll-smooth bg-black">
       <div id="profile" className="min-h-screen relative">
         <Profile />
       </div>
@@ -16,12 +17,13 @@ const page = () => {
       <div id="skills">
         <Skills />
       </div>
-      <div id="hackathon" className="relative min-h-screen m-4">
+      <div id="hackathon" className="relative min-h-screen ">
         <HackathonsPage />
       </div>
       <div id="contact" className="relative ">
         <ContactPage />
       </div>
+      
     </div>
   );
 }

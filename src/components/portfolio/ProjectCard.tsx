@@ -9,7 +9,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
       transition={{ duration: 0.3 }}
       className="relative overflow-hidden rounded-xl shadow-lg group"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 opacity-80 dark:opacity-60"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 opacity-60"></div>
       <div className="relative z-10 p-6 h-full">
         <div className="flex justify-between items-start mb-4">
           <div>

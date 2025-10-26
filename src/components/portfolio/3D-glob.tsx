@@ -141,7 +141,7 @@ const TechMarker: React.FC<TechMarkerProps> = React.memo(({ tech, isHovered, set
       <Html distanceFactor={15} position={[0, 0.15, 0]}>
         <div 
           className={`transform -translate-x-1/2 px-2 py-1 rounded-md
-            dark:bg-black dark:text-white bg-white text-gray-900
+            bg-black text-white 
            transition-all duration-200`}
           style={{ 
             opacity: isHovered ? 1 : 0.6,

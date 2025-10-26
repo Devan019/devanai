@@ -60,30 +60,27 @@ const ProjectsSection = () => {
     : filteredProjects[0];
 
   return (
-    <section className="min-h-screen bg-white dark:bg-black transition-colors duration-300 relative">
-      <BackgroundBeamsWithCollision className="min-h-screen">
+    <BackgroundBeamsWithCollision className="min-h-screen max-w-full">
+      <section className="min-h-screen max-w-full bg-black transition-colors duration-300 relative">
         <SparklesCore
           id="projects-sparkles"
           background="transparent"
           minSize={0.6}
           maxSize={1.4}
           particleDensity={20}
-          className="w-[90%] h-full absolute"
+          className="w-[90%] max-w-full h-full absolute"
           particleColor="#888"
         />
 
-        <div className="z-10 max-w-7xl mx-auto px-4 py-8">
+        <div className="z-10  mx-auto px-4 py-8">
           {/* main titles and header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-center"
+            className="text-center text-4xl md:text-5xl lg:text-6xl font-bold text-white"
           >
-            <TextGenerateEffect
-              words="My Projects"
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white"
-            />
+            My Projects           
           </motion.div>
 
           {/* skills */}
@@ -96,7 +93,7 @@ const ProjectsSection = () => {
                 onClick={() => setActiveSkill(skill)}
                 className={`z-10 px-3 py-1 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-medium transition-colors ${activeSkill === skill
                   ? "bg-blue-600 text-white"
-                  : "bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600"
+                  : "bg-gray-700 text-gray-200 hover:bg-gray-600"
                   }`}
               >
                 {skill}
@@ -107,10 +104,10 @@ const ProjectsSection = () => {
           {/* below projects */}
           <div className="flex flex-col lg:flex-row gap-8 mt-6">
             {/* Left side - Projects Grid */}
-            <div className={`w-full ${isTablet ? '' : 'lg:w-7/12'}`}>
+            <div className="w-full lg:w-1/2">
               {/* Projects Grid */}
               <div className="space-y-6">
-                <div className={`grid grid-cols-1 ${isMobile ? '' : 'md:grid-cols-2'} gap-4 md:gap-6`}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                   <AnimatePresence mode="wait">
                     {paginatedProjects.length > 0 ? (
                       paginatedProjects.map((project) => (
@@ -128,8 +125,8 @@ const ProjectsSection = () => {
                           exit={{ opacity: 0, y: -20 }}
                           transition={{ duration: 0.3 }}
                           className={`z-10 p-4 md:p-5 rounded-xl shadow-sm hover:shadow-md transition-all ${hoveredProject === project.id && !isTablet
-                            ? 'ring-2 ring-blue-500 dark:ring-blue-400 bg-blue-50 dark:bg-blue-900/20'
-                            : 'bg-gray-100 dark:bg-gray-800 border-blue-800 border-2'
+                            ? 'ring-2 ring-blue-400 bg-blue-900/20'
+                            : 'bg-gray-800 border-blue-800 border-2'
                             }`}
                           onClick={() => {
                             setHoveredProject(project.id);
@@ -145,23 +142,23 @@ const ProjectsSection = () => {
                             transition: { duration: 0.2 }
                           }}
                         >
-                          <h3 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white">
+                          <h3 className="text-lg md:text-xl font-semibold text-white">
                             {project.title}
                           </h3>
-                          <p className="mt-2 text-sm md:text-base text-gray-600 dark:text-gray-300 line-clamp-2">
+                          <p className="mt-2 text-sm md:text-base text-gray-300 line-clamp-2">
                             {project.description}
                           </p>
                           <div className="mt-3 flex flex-wrap gap-1 md:gap-2">
                             {project.tags.slice(0, isMobile ? 2 : 3).map((tag) => (
                               <span
                                 key={tag}
-                                className="px-2 py-1 text-xs rounded-full bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200"
+                                className="px-2 py-1 text-xs rounded-full bg-blue-900 text-blue-200"
                               >
                                 {tag}
                               </span>
                             ))}
                             {project.tags.length > (isMobile ? 2 : 3) && (
-                              <span className="px-2 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
+                              <span className="px-2 py-1 text-xs rounded-full bg-gray-700 text-gray-200">
                                 +{project.tags.length - (isMobile ? 2 : 3)}
                               </span>
                             )}
@@ -172,7 +169,7 @@ const ProjectsSection = () => {
                                 <HoverBorderGradient
                                   containerClassName="rounded-full"
                                   as="button"
-                                  className="dark:bg-black bg-white text-xs flex items-center gap-1 dark:text-white text-zinc-800"
+                                  className="bg-zinc-900 text-xs flex items-center gap-1 text-white"
                                 >
                                   <span>GitHub</span>
                                   <svg className="w-3 h-3 md:w-4 md:h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -186,7 +183,7 @@ const ProjectsSection = () => {
                                 <HoverBorderGradient
                                   containerClassName="rounded-full"
                                   as="button"
-                                  className="dark:bg-black bg-white text-xs flex items-center gap-1"
+                                  className="bg-black text-xs flex items-center gap-1"
                                 >
                                   <span>Live</span>
                                   <svg className="w-3 h-3 md:w-4 md:h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -199,7 +196,7 @@ const ProjectsSection = () => {
                         </motion.div>
                       ))
                     ) : (
-                      <div className="col-span-2 py-12 text-center text-gray-500 dark:text-gray-400">
+                      <div className="col-span-2 py-12 text-center text-gray-400">
                         No projects found for this category
                       </div>
                     )}
@@ -213,20 +210,20 @@ const ProjectsSection = () => {
                       onClick={() => handlePageChange(activePage - 1)}
                       disabled={activePage === 1}
                       className={`z-[99] px-3 py-1 md:px-4 md:py-2 rounded-md text-sm md:text-base ${activePage === 1
-                        ? "bg-gray-200 dark:bg-gray-700 text-gray-500 cursor-not-allowed"
+                        ? "bg-gray-700 text-gray-500 cursor-not-allowed"
                         : "bg-blue-600 text-white hover:bg-blue-700"
                         }`}
                     >
                       {"<"}
                     </button>
-                    <div className="text-sm md:text-base text-gray-700 dark:text-gray-300">
+                    <div className="text-sm md:text-base text-gray-300">
                       Page {activePage} of {totalPages}
                     </div>
                     <button
                       onClick={() => handlePageChange(activePage + 1)}
                       disabled={activePage === totalPages}
                       className={`z-[99] px-3 py-1 md:px-4 md:py-2 rounded-md text-sm md:text-base ${activePage === totalPages
-                        ? "bg-gray-200 dark:bg-gray-700 text-gray-500 cursor-not-allowed"
+                        ? "bg-gray-700 text-gray-500 cursor-not-allowed"
                         : "bg-blue-600 text-white hover:bg-blue-700"
                         }`}
                     >
@@ -241,7 +238,7 @@ const ProjectsSection = () => {
             {!isMobile && (
               <div
                 id="project-details"
-                className={`w-full ${isTablet ? 'mt-8' : 'lg:w-5/12'} sticky top-12 h-fit flex flex-col justify-center gap-4`}
+                className="w-full lg:w-1/2 sticky top-12 h-fit flex flex-col justify-center gap-4"
               >
                 <AnimatePresence mode="wait">
                   {featuredProject ? (
@@ -253,17 +250,17 @@ const ProjectsSection = () => {
                       transition={{ duration: 0.3 }}
                       className={isTablet ? '' : 'mt-12'}
                     >
-                      <BackgroundGradient className="rounded-[22px] h-full p-1 bg-white dark:bg-zinc-900">
+                      <BackgroundGradient className="rounded-[22px] h-full p-1 bg-zinc-900">
                         <ProjectCard project={featuredProject} />
                       </BackgroundGradient>
                     </motion.div>
                   ) : (
-                    <BackgroundGradient className="rounded-[22px] h-full p-1 bg-white dark:bg-zinc-900">
+                    <BackgroundGradient className="rounded-[22px] h-full p-1 bg-zinc-900">
                       <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="p-6 md:p-8 rounded-xl bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 border border-gray-200 dark:border-gray-700 text-center flex flex-col items-center justify-center h-full min-h-[300px] md:min-h-[400px]"
+                        className="p-6 md:p-8 rounded-xl bg-gradient-to-br from-gray-800 to-gray-700 border border-gray-700 text-center flex flex-col items-center justify-center h-full min-h-[300px] md:min-h-[400px]"
                       >
                         <motion.div
                           animate={{
@@ -279,12 +276,12 @@ const ProjectsSection = () => {
                         >
                           👆
                         </motion.div>
-                        <h3 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                        <h3 className="text-lg md:text-xl font-semibold text-white mb-2">
                           {filteredProjects.length === 0
                             ? "No projects available"
                             : "Select a project"}
                         </h3>
-                        <p className="text-sm md:text-base text-gray-600 dark:text-gray-300">
+                        <p className="text-sm md:text-base text-gray-300">
                           {filteredProjects.length === 0
                             ? "There are no projects in this category"
                             : "Details will appear here"}
@@ -294,7 +291,7 @@ const ProjectsSection = () => {
                   )}
                 </AnimatePresence>
                 {!isTablet && (
-                  <div className="text-center z-10 text-sm md:text-lg text-green-600 dark:text-green-300">
+                  <div className="text-center z-10 text-sm md:text-lg text-green-300">
                     {"**Click on project to see full description**"}
                   </div>
                 )}
@@ -304,7 +301,7 @@ const ProjectsSection = () => {
 
           {/* Mobile-only project details (appears below projects) */}
           {isMobile && hoveredProject && (
-            <div id="project-details" className="mt-6">
+            <div id="project-details" className="mt-6 w-full">
               <AnimatePresence>
                 {featuredProject && (
                   <motion.div
@@ -314,7 +311,7 @@ const ProjectsSection = () => {
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <BackgroundGradient className="rounded-[22px] h-full p-1 bg-white dark:bg-zinc-900">
+                    <BackgroundGradient className="rounded-[22px] h-full p-1 bg-zinc-900">
                       <ProjectCard project={featuredProject} />
                     </BackgroundGradient>
                   </motion.div>
@@ -323,8 +320,8 @@ const ProjectsSection = () => {
             </div>
           )}
         </div>
-      </BackgroundBeamsWithCollision>
-    </section>
+      </section>
+    </BackgroundBeamsWithCollision>
   );
 };
 

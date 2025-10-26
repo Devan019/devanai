@@ -14,7 +14,7 @@ const Skills = () => {
 
       <div
         className={`w-1/2 flex items-center justify-center
-            dark:text-gray-100 text-gray-900`}
+            text-gray-100`}
       >
         <motion.h2
           className="text-4xl md:text-5xl lg:text-6xl font-bold mt-12"
@@ -23,7 +23,7 @@ const Skills = () => {
           transition={{ duration: 0.5 }}
         >
           My{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">
+          <span className="">
             Skills
           </span>
         </motion.h2>

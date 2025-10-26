@@ -3,213 +3,153 @@ import { Timeline } from "@/components/ui/timeline";
 
 export function MyLife() {
   const timelineData = [
+    // 1️⃣ First Year
     {
       title: "First Year College",
-      period: "Aug 2023 - May 2024",
+      period: "Aug 2023 – May 2024",
       url: "/characters/12.gif",
       content: (
-        <div>
-          <p className="mb-4 text-sm font-normal text-neutral-800 dark:text-neutral-200">
-            Completed first year with <strong>9.31 CPI</strong> while exploring various tech domains. Key highlights:
+        <div className="">
+          <p className="mb-4 w-[75%] text-lg font-normal text-neutral-200">
+            Completed my <strong>first year with 9.31 CPI</strong> while exploring
+            multiple domains of computer science and development. Built the foundation
+            for strong technical and teamwork skills.
           </p>
 
-          <div className="mb-6">
-            <div className="flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300">
-              ✅ <strong>Skills Learned:</strong> C ,C++, Data Structures, Web Dev Basics with php and mysql
-            </div>
-            <div className="flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300">
-              ✅ <strong>Projects:</strong> Hotel management, Web games, Motel management
-            </div>
-            <div className="flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300">
-              ✅ <strong>Events:</strong> Tech Symposium, Hackathon Workshop
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 gap-4">
-            <img
-              src="/images/college-event-1.jpg"
-              alt="College tech fest"
-              className="h-40 w-full rounded-lg object-cover shadow-lg"
-            />
-            <img
-              src="/images/first-project.jpg"
-              alt="First project screenshot"
-              className="h-40 w-full rounded-lg object-cover shadow-lg"
-            />
+          <div className="mb-6 space-y-1 text-md text-neutral-300">
+            <div>✅ <strong>Skills:</strong> C, C++, Data Structures, Web Dev (PHP, MySQL)</div>
+            <div>✅ <strong>Projects:</strong> Hotel Management, Motel Management, Web Games</div>
+            <div>✅ <strong>Events:</strong> Tech Symposium, Hackathon Workshop</div>
           </div>
 
           <div className="mt-6 flex gap-3">
-            <a
-              href="/portfolio/#skills"
-              className="px-4 py-2 text-sm bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors"
-            >
-              View Skills
-            </a>
-            <a
-              href="/portfolio/#projects"
-              className="px-4 py-2 text-sm bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-lg transition-colors"
-            >
-              View Projects
-            </a>
+            <a href="/portfolio/#skills" className="px-4 py-2 text-sm bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors">View Skills</a>
+            <a href="/portfolio/#projects" className="px-4 py-2 text-sm bg-gray-700 hover:bg-gray-600 rounded-lg transition-colors">View Projects</a>
           </div>
         </div>
       ),
     },
+
+    // 3️⃣ GDG Experience
     {
-      title: "GDG Web team member",
-      period: "Sep 2024 - Present",
+      title: "Joined GDG DDU Web Team",
+      period: "Sep 2024 – Present",
       url: "/characters/1st.gif",
       content: (
         <div>
-          <p className="mb-4 text-sm font-normal text-neutral-800 dark:text-neutral-200">
-            As <strong>Google Developer Group (Web Team member )</strong>, organized 5+ tech events with 300+ participants:
+          <p className="mb-4 w-[75%] text-lg font-normal text-neutral-200">
+            Joined <strong>Google Developer Group (GDG) DDU</strong> as a Web Team Member.
+            Collaborated with an amazing team of developers and organized impactful tech events.
           </p>
 
-          <div className="mb-6">
-            <div className="flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300">
-              ✅ Organized <strong>Flutter Festival</strong> with 150+ attendees
-            </div>
-            <div className="flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300">
-              ✅ Hosted <strong>Google Cloud Study Jam</strong> certification program
-            </div>
-            <div className="flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300">
-              ✅ Developed leadership and public speaking skills
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 gap-4">
-            <img
-              src="/images/gdg-event-1.jpg"
-              alt="GDG Flutter Festival"
-              className="h-40 w-full rounded-lg object-cover shadow-lg"
-            />
-            <img
-              src="/images/gdg-event-2.jpg"
-              alt="Cloud Study Jam"
-              className="h-40 w-full rounded-lg object-cover shadow-lg"
-            />
+          <div className="mb-6 space-y-1 text-md text-neutral-300">
+           <div>✅ Organized DUHacks 4.0 (6000+ participants)</div>
+            <div>✅ Hosted <strong>Google Hack2Skill</strong> explanation program</div>
+            <div>✅ Enhanced leadership, teamwork, and public speaking skills</div>
           </div>
 
           <div className="mt-6">
-            <a
-              href="https://gdg.community.dev"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
-            >
+            <a href="https://gdg.community.dev/gdg-on-campus-dharmsinh-desai-university-nadiad-india/" target="_blank" rel="noopener noreferrer" className="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors">
               Visit GDG Page
             </a>
           </div>
         </div>
       ),
     },
+
+    // 4️⃣ Hackathon Win - Intellicruit
     {
-      title: "Hackathon Journey",
-      period: "Oct 2023 - Jan 2024",
+      title: "Holboxathon 2025 - Consolation Prize 🏆",
+      period: "May 2025",
       url: "/characters/12.gif",
       content: (
         <div>
-          <p className="mb-4 text-sm font-normal text-neutral-800 dark:text-neutral-200">
-            Organized <strong>DUHacks 4.0</strong> (500+ participants) and competed in GEC Hackathon:
+          <p className="mb-4 w-[75%] text-lg font-normal text-neutral-200">
+            Won a <strong>Consolation Prize</strong> at <strong>Holboxathon 2025</strong> for
+            our project <strong>Intellicruit - AI-Powered Hiring Platform</strong>, revolutionizing
+            recruitment through automation and LLM-based intelligence.
           </p>
 
-          <div className="mb-6">
-            <div className="flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300">
-              ✅ Built <strong>AI-powered healthcare solution</strong> at GEC Hackathon
-            </div>
-            <div className="flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300">
-              ✅ Managed logistics for DUHacks with 50+ volunteers
-            </div>
-            <div className="flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300">
-              ✅ Won <strong>Best UI/UX Award</strong> for hackathon project
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 gap-4">
-            <img
-              src="/images/hackathon-1.jpg"
-              alt="DUHacks 4.0"
-              className="h-40 w-full rounded-lg object-cover shadow-lg"
-            />
-            <img
-              src="/images/hackathon-project.jpg"
-              alt="Winning project"
-              className="h-40 w-full rounded-lg object-cover shadow-lg"
-            />
+          <div className="mb-6 space-y-1 text-md text-neutral-300">
+            <div>✅ AI-powered resume screening and candidate scoring</div>
+            <div>✅ Personalized job recommendations & mock interviews</div>
+            <div>✅ Built using Next.js 15, FastAPI, LangChain, FAISS, MongoDB</div>
           </div>
 
           <div className="mt-6 flex gap-3">
-            <a
-              href="/portfolio/projects"
-              className="px-4 py-2 text-sm bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors"
-            >
-              View Projects
+            <a href="https://github.com/MILANBHADARKA/intellicruit" target="_blank" rel="noopener noreferrer" className="px-4 py-2 text-sm bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors">
+              View Code
             </a>
-            <a
-              href="/portfolio/events"
-              className="px-4 py-2 text-sm bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-lg transition-colors"
-            >
-              View Events
+            <a href="https://devfolio.co/projects/intellicruit-8ab9" target="_blank" rel="noopener noreferrer" className="px-4 py-2 text-sm bg-gray-700 hover:bg-gray-600 rounded-lg transition-colors">
+              View Devfolio
             </a>
           </div>
         </div>
       ),
     },
+
+    // 5️⃣ Freelance Experience
     {
-      title: "Second Year College",
-      period: "Aug 2023 - May 2024",
+      title: "Frontend Developer (Freelance) – Techno College, Lucknow",
+      period: "June 2025 – July 2025",
       url: "/characters/1st.gif",
       content: (
         <div>
-          <p className="mb-4 text-sm font-normal text-neutral-800 dark:text-neutral-200">
-            Maintained <strong>9.5 CPI</strong> while diving deeper into development:
+          <p className="mb-4 w-[75%] text-lg font-normal text-neutral-200">
+            Worked as a <strong>Frontend Developer</strong> for <strong>Techno College, Lucknow</strong>,
+            contributing to their official website and internal dashboards for Admissions, Students, Faculty, and Fees.
           </p>
 
-          <div className="mb-6">
-            <div className="flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300">
-              ✅ <strong>Advanced Skills:</strong> React, Node.js, Firebase, UI/UX
-            </div>
-            <div className="flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300">
-              ✅ <strong>Key Projects:</strong> E-commerce App, AI Chatbot
-            </div>
-            <div className="flex items-center gap-2 text-sm text-neutral-700 dark:text-neutral-300">
-              ✅ <strong>Subjects:</strong> Algorithms, DBMS, Computer Networks
-            </div>
+          <div className="mb-6 space-y-1 text-md text-neutral-300">
+            <div>✅ Built responsive, accessible dashboards</div>
+            <div>✅ Implemented secure RBAC & API integration using TanStack Query</div>
+            <div>✅ Used Next.js, TypeScript, TailwindCSS, and Zod for scalable code</div>
+            <div>✅ Improved API reliability & UI performance for production</div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            <img
-              src="/images/second-year-project.jpg"
-              alt="E-commerce project"
-              className="h-40 w-full rounded-lg object-cover shadow-lg"
-            />
-            <img
-              src="/images/college-event-2.jpg"
-              alt="Tech seminar"
-              className="h-40 w-full rounded-lg object-cover shadow-lg"
-            />
+          <div className="mt-6">
+            <a href="https://tihs.edu.in" target="_blank" rel="noopener noreferrer" className="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors">
+              Visit Live Site
+            </a>
+          </div>
+        </div>
+      ),
+    },
+
+    // 6️⃣ Third Year
+    {
+      title: "Third Year – Advanced Development & AI Exploration",
+      period: "Aug 2025 – Present",
+      url: "/characters/12.gif",
+      content: (
+        <div>
+          <p className="mb-4 w-[75%] text-lg font-normal text-neutral-200">
+            Currently in <strong>Third Year</strong>, focusing on <strong>AI-driven web development</strong>,
+            full-stack applications, and modern frameworks.
+          </p>
+
+          <div className="mb-6 space-y-1 text-md text-neutral-300">
+            <div>✅ Built <strong>ZennVid</strong> – an AI-based video generation platform (Gemini, Whisper, SadTalker)</div>
+            <div>✅ Exploring advanced tools like LangChain, Groq, and Llama3</div>
+            <div>✅ Actively participating in GDG and hackathon events</div>
+            <div>✅ Expanding knowledge in AI, ML, and software architecture</div>
           </div>
 
           <div className="mt-6 flex gap-3">
-            <a
-              href="/portfolio/skills"
-              className="px-4 py-2 text-sm bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors"
-            >
-              View Skills
+            <a href="https://github.com/Devan019/ZennVid" target="_blank" rel="noopener noreferrer" className="px-4 py-2 text-sm bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors">
+              View ZennVid Code
             </a>
-            <a
-              href="/portfolio/achievements"
-              className="px-4 py-2 text-sm bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-lg transition-colors"
-            >
-              View Achievements
+            <a href="https://youtu.be/xQMNkiQtlxM" target="_blank" rel="noopener noreferrer" className="px-4 py-2 text-sm bg-gray-700 hover:bg-gray-600 rounded-lg transition-colors">
+              Watch Demo
             </a>
           </div>
         </div>
       ),
     },
   ];
+
   return (
-    <div className="relative w-full py-12  min-h-screen">
+    <div className="relative w-full py-12 min-h-screen">
       <Timeline data={timelineData} />
     </div>
   );

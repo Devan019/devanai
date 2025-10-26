@@ -43,25 +43,25 @@ export const HeroHighlight = ({
     <div
 
       className={cn(
-        "group relative flex h-screen w-full items-center justify-center bg-white dark:bg-black min-h-screen  ",
+        "group relative flex min-h-screen w-full items-center justify-center bg-black   ",
         containerClassName,
       )}
       onMouseMove={handleMouseMove}
     >
       <div
-        className="pointer-events-none absolute inset-0 dark:hidden"
+        className="pointer-events-none absolute inset-0 hidden"
         style={{
           backgroundImage: dotPatterns.light.default,
         }}
       />
       <div
-        className="pointer-events-none absolute inset-0 hidden dark:block"
+        className="pointer-events-none absolute inset-0  block"
         style={{
           backgroundImage: dotPatterns.dark.default,
         }}
       />
       <motion.div
-        className="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 dark:hidden"
+        className="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 hidden"
         style={{
           backgroundImage: dotPatterns.light.hover,
           WebkitMaskImage: useMotionTemplate`
@@ -81,7 +81,7 @@ export const HeroHighlight = ({
         }}
       />
       <motion.div
-        className="pointer-events-none absolute inset-0 hidden opacity-0 transition duration-300 group-hover:opacity-100 dark:block"
+        className="pointer-events-none absolute inset-0  opacity-0 transition duration-300 group-hover:opacity-100 block"
         style={{
           backgroundImage: dotPatterns.dark.hover,
           WebkitMaskImage: useMotionTemplate`
@@ -132,7 +132,7 @@ export const Highlight = ({
         display: "inline",
       }}
       className={cn(
-        `relative inline-block rounded-lg bg-gradient-to-r from-indigo-300 to-purple-300 px-1 pb-1 dark:from-indigo-500 dark:to-purple-500`,
+        `relative inline-block rounded-lg bg-gradient-to-r  px-1 pb-1 from-indigo-500 to-purple-500`,
         className,
       )}
     >

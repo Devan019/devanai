@@ -1,9 +1,10 @@
+
 import { MyLife } from '@/components/MyLife'
 import React from 'react'
 
 const page = () => {
   return (
-    <div>
+    <div className='bg-black'>
       <MyLife />
     </div>
   )

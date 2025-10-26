@@ -113,12 +113,12 @@ const Navbar = () => {
 
   return (
     <motion.nav
-      className={`fixed top-0  md:w-full w-screen z-[99] transition-all duration-300 ${scrolled ? 'py-2' : 'py-4'} dark:bg-black/10 dark:backdrop-blur-md bg-white/80 backdrop-blur-md'}`}
+      className={`fixed top-0  md:w-full w-screen z-[99] transition-all duration-300 ${scrolled ? 'py-2' : 'py-4'} bg-black/90  backdrop-blur-md'}`}
       // initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 ">
         <div className="flex w-full  justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
@@ -131,7 +131,7 @@ const Navbar = () => {
                   window.history.pushState(null, '', '/portfolio');
                 }
               }}
-              className={`hover:cursor-pointer text-xl font-bold dark:text-purple-400 text-purple-600`}
+              className={`hover:cursor-pointer text-xl font-bold text-purple-400 `}
               whileHover={{ scale: 1.05 }}
             >
               DevanAI
@@ -204,7 +204,7 @@ const Navbar = () => {
                 key={item.id}
                 className={`block px-3 py-2 rounded-md text-base font-medium w-full text-left ${theme == "dark" ?
                   (activeSection === item.id ? 'bg-gray-900 text-purple-400' : 'text-gray-300 hover:bg-gray-700 hover:text-white') :
-                  (activeSection === item.id ? 'bg-gray-100 text-purple-600' : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900')}`}
+                  (activeSection === item.id ? ' text-purple-600' : 'text-purple-400 hover:bg-gray-100 hover:text-gray-900')}`}
                 onClick={() => scrollToSection(item.id)}
                 whileHover={{ scale: 1.02 }}
               >

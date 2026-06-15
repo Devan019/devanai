@@ -1,14 +1,6 @@
 
 import { motion } from 'framer-motion';
-import { FiSearch, FiMapPin, FiAward, FiCalendar, FiCode, FiGithub } from 'react-icons/fi';
-
-// Import Swiper styles and modules
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, A11y } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import { HeroHighlight } from '../ui/hero-highlight';
+import { FiMapPin, FiAward, FiCalendar, FiCode, FiGithub } from 'react-icons/fi';
 
 // Types
 interface Hackathon {
@@ -30,18 +22,6 @@ interface Hackathon {
 // Sample data
 const hackathonsData: Hackathon[] = [
   {
-    title: "Cognital - Hack The Spring",
-    location: "GEC Gandhinagar, Gujarat",
-    date: "March 2025",
-    problemStatement: "Create an intelligent learning platform that adapts to a user's skill level and provides personalized course content.",
-    projectDescription: "We built a Smart AI Learning Platform that generates personalized courses and dynamically adjusts quiz difficulty based on user performance. The platform ensures an adaptive and engaging learning journey for every user.",
-    githubLink: "https://github.com/Devan019/AI-learning-platform.git",
-    deployLink: "",
-    teamMembers: ["Devan", "Hasan", "Chintan", "Jadeja"],
-    technologies: ["React.js", "Tailwind CSS", "Aceternity UI", "Spring Boot", "MySQL", "Postman", "Gemini"],
-    category: "EdTech"
-  },
-  {
     "title": "Intellicruit - Holboxathon",
     "location": "(Online)",
     "date": "May 2025",
@@ -50,33 +30,43 @@ const hackathonsData: Hackathon[] = [
     "githubLink": "https://github.com/MILANBHADARKA/intellicruit",
     "deployLink": "https://lnkd.in/gY8Hp78n",
     "teamMembers": ["Devan Chauhan", "Jeet Bhuptani", "Milan Bhadarka", "Manil Modi"],
-    "technologies": ["Next.js", "FastAPI", "LangChain", "FAISS", "MongoDB", "Clerk", "Cloudinary", "Framer Motion", "Recharts", "Llama3", "Groq", "Sentence Transformers", "OpenCV",],
+    "technologies": ["Next.js", "FastAPI", "LangChain", "FAISS", "MongoDB", "Clerk", "Cloudinary", "Framer Motion", "Recharts", "Llama3", "Groq", "Sentence Transformers", "OpenCV"],
     "category": "AI Recruitment / CareerTech",
     "award": "Consolation Prize"
   },
   {
-    title: "Elevance - Tic Tac Toe",
-    location: "DAIICT Gandhinagar",
-    date: "May 2025",
-    problemStatement: "Create a smart career advisor that adapts to users' skill levels, market trends, and helps in job-readiness.",
-    projectDescription: "We built an AI-powered career advisor platform that analyzes user skills, conducts quizzes via Gemini LLM, and provides dynamic recommendations including learning paths, jobs, resume tips, and LinkedIn-based networking suggestions.",
-    githubLink: "https://github.com/MILANBHADARKA/elevance",
+    title: "LedgerZero - DUHacks 5.0",
+    location: "DDU, Nadiad",
+    date: "January 2026",
+    problemStatement: "Build a digital payment platform with advanced fraud detection capabilities that goes beyond traditional rule-based systems.",
+    projectDescription: "LedgerZero is a full-stack digital payment platform that combines UPI-style transactions with cutting-edge AI/ML fraud detection. Unlike traditional rule-based systems, LedgerZero uses Graph Neural Networks (GNN) to analyze transaction patterns across the entire network in real-time, detecting sophisticated fraud schemes like mule networks, layering, and structuring.",
+    githubLink: "https://github.com/Concurrents-org/LedgerZero",
     deployLink: "",
-    teamMembers: ["Devan", "Manil", "Suryadeep", "Milan"],
-    technologies: ["Next.js", "MongoDB", "Gemini LLM", "Tailwind CSS", "Python"],
-    category: "CareerTech",
+    teamMembers: ["Devan Chauhan"],
+    technologies: ["React", "TypeScript", "Java", "Spring Boot", "Kafka", "SQS", "SNS", "RDS", "Redis", "AWS"],
+    category: "FinTech",
+    award: "3rd Prize"
   }
 ];
 
-// Simple Hackathon Card Component
+// Hackathon Card Component
 const HackathonCard = ({ title, location, date, projectDescription, technologies, award, githubLink }: Hackathon) => {
   return (
-
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      whileHover={{ y: -5, boxShadow: "0 20px 40px rgba(0,0,0,0.2)" }}
-      className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6  max-w-screen h-[450px] flex flex-col shadow-lg border border-gray-700 hover:border-purple-500 transition-all duration-300 relative "
+      whileHover={{ y: -4, transition: { duration: 0.2 } }}
+      className="rounded-xl p-6 flex flex-col transition-all duration-300 relative"
+      style={{
+        backgroundColor: 'var(--portfolio-card)',
+        border: '1px solid var(--portfolio-card-border)',
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.borderColor = 'var(--portfolio-accent)';
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.borderColor = 'var(--portfolio-card-border)';
+      }}
     >
       {/* GitHub Icon */}
       {githubLink && (
@@ -84,7 +74,10 @@ const HackathonCard = ({ title, location, date, projectDescription, technologies
           href={githubLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
+          className="absolute top-4 right-4 transition-colors"
+          style={{ color: 'var(--portfolio-text-secondary)' }}
+          onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--portfolio-accent)'; }}
+          onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--portfolio-text-secondary)'; }}
         >
           <FiGithub className="w-6 h-6" />
         </a>
@@ -93,12 +86,23 @@ const HackathonCard = ({ title, location, date, projectDescription, technologies
       {/* Header with Award Badge */}
       <div className="flex justify-between items-start mb-4">
         <div className="flex-1">
-          <h3 className="text-2xl font-bold text-white mb-2">{title}</h3>
-          <div className="flex items-center gap-2 text-gray-400 text-sm">
+          <h3
+            className="text-2xl font-bold mb-2"
+            style={{ color: 'var(--portfolio-text)' }}
+          >
+            {title}
+          </h3>
+          <div
+            className="flex items-center gap-2 text-sm"
+            style={{ color: 'var(--portfolio-text-secondary)' }}
+          >
             <FiMapPin className="w-4 h-4" />
             <span>{location}</span>
           </div>
-          <div className="flex items-center gap-2 text-gray-400 text-sm mt-1">
+          <div
+            className="flex items-center gap-2 text-sm mt-1"
+            style={{ color: 'var(--portfolio-text-secondary)' }}
+          >
             <FiCalendar className="w-4 h-4" />
             <span>{date}</span>
           </div>
@@ -109,10 +113,10 @@ const HackathonCard = ({ title, location, date, projectDescription, technologies
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ delay: 0.2, type: "spring" }}
-            className={`flex items-center gap-2 px-3 py-2 rounded-full ${award === "Winner"
-              ? "bg-gradient-to-r from-yellow-500 to-orange-500"
-              : "bg-gradient-to-r from-gray-400 to-gray-500"
-              } text-white text-sm font-semibold shadow-lg mt-4`}
+            className="flex items-center gap-2 px-3 py-2 rounded-full text-white text-sm font-semibold mt-4"
+            style={{
+              backgroundColor: 'var(--portfolio-accent)',
+            }}
           >
             <FiAward className="w-4 h-4" />
             <span>{award}</span>
@@ -122,7 +126,10 @@ const HackathonCard = ({ title, location, date, projectDescription, technologies
 
       {/* Description */}
       <div className="flex-1 mb-4">
-        <p className="text-gray-300 text-sm leading-relaxed line-clamp-4">
+        <p
+          className="text-sm leading-relaxed"
+          style={{ color: 'var(--portfolio-text-secondary)' }}
+        >
           {projectDescription}
         </p>
       </div>
@@ -130,18 +137,27 @@ const HackathonCard = ({ title, location, date, projectDescription, technologies
       {/* Technologies */}
       <div className="mt-auto">
         <div className="flex items-center gap-2 mb-3">
-          <FiCode className="w-4 h-4 text-purple-400" />
-          <h4 className="text-sm font-semibold text-gray-300">Technologies</h4>
+          <FiCode className="w-4 h-4" style={{ color: 'var(--portfolio-accent)' }} />
+          <h4
+            className="text-sm font-semibold"
+            style={{ color: 'var(--portfolio-text-secondary)' }}
+          >
+            Technologies
+          </h4>
         </div>
         <div className="flex flex-wrap gap-2">
           {technologies.map((tech, index) => (
-            <motion.span
+            <span
               key={index}
-              whileHover={{ scale: 1.05 }}
-              className="px-3 py-1 text-xs rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30 backdrop-blur-sm"
+              className="px-3 py-1 text-xs rounded-full"
+              style={{
+                backgroundColor: 'var(--portfolio-accent-soft)',
+                color: 'var(--portfolio-accent)',
+                border: '1px solid var(--portfolio-accent-border)',
+              }}
             >
               {tech}
-            </motion.span>
+            </span>
           ))}
         </div>
       </div>
@@ -151,93 +167,65 @@ const HackathonCard = ({ title, location, date, projectDescription, technologies
 
 // Main Component
 const HackathonsPage = () => {
-  
-
-  
-
   return (
-    <HeroHighlight className='max-w-full min-h-screen'>
-      <div className="min-h-screen flex justify-center items-center">
-        <div className="max-w-screen mx-auto">
+    <div
+      className="max-w-full min-h-screen relative"
+      style={{ backgroundColor: 'var(--portfolio-bg)' }}
+    >
+      {/* Grid pattern */}
+      <div
+        className="absolute inset-0"
+        style={{
+          opacity: 'var(--portfolio-grid-opacity)',
+          backgroundSize: '40px 40px',
+          backgroundImage: 'linear-gradient(to right, var(--portfolio-grid-color) 1px, transparent 1px), linear-gradient(to bottom, var(--portfolio-grid-color) 1px, transparent 1px)',
+        }}
+      />
+
+      <div className="min-h-screen flex justify-center items-center relative z-10">
+        <div className="max-w-6xl mx-auto px-4">
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-12"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl  font-extrabold text-white mb-4 ">
+            <h1
+              className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4"
+              style={{ color: 'var(--portfolio-text)' }}
+            >
               My Hackathon Journey
             </h1>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            <p
+              className="text-xl max-w-2xl mx-auto"
+              style={{ color: 'var(--portfolio-text-secondary)' }}
+            >
               (Attend 5+ hackathons)
             </p>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            <p
+              className="text-xl max-w-2xl mx-auto"
+              style={{ color: 'var(--portfolio-text-secondary)' }}
+            >
               Showcasing innovative projects from hackathons around the world
             </p>
           </motion.div>
 
-
-          {/* Swiper Slider */}
-          <div className="relative">
-            {hackathonsData.length > 0 ? (
-              <Swiper
-                modules={[Navigation, Pagination, A11y]}
-                spaceBetween={24}
-                slidesPerView={1}
-                navigation
-                pagination={{ clickable: true }}
-                breakpoints={{
-                  640: { slidesPerView: 1 },
-                  768: { slidesPerView: 2 },
-                  1024: { slidesPerView: 3 },
-                }}
-                className="!pb-12"
+          {/* Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {hackathonsData.map((hackathon, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: idx * 0.15, duration: 0.4 }}
               >
-                {hackathonsData.map((hackathon, idx) => (
-                  <SwiperSlide key={idx}>
-                    <HackathonCard {...hackathon} />
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            ) : (
-              <div className="flex flex-col items-center justify-center py-16 text-center">
-                <div className="bg-gray-800 rounded-full p-6 mb-4">
-                  <FiSearch className="h-12 w-12 text-gray-500" />
-                </div>
-                <h3 className="text-2xl font-medium text-white mb-2">No hackathons found</h3>
-                <p className="text-gray-400 max-w-md">
-                  Try adjusting your search terms or filters to find what you are looking for.
-                </p>
-              </div>
-            )}
+                <HackathonCard {...hackathon} />
+              </motion.div>
+            ))}
           </div>
         </div>
-
-        <style jsx global>{`
-        .swiper-button-next,
-        .swiper-button-prev {
-          color: #a855f7 !important;
-          background: rgba(31, 41, 55, 0.8) !important;
-          backdrop-filter: blur(8px) !important;
-          width: 40px !important;
-          height: 40px !important;
-          border-radius: 50% !important;
-          border: 1px solid rgba(168, 85, 247, 0.3) !important;
-        }
-        .swiper-button-next:after,
-        .swiper-button-prev:after {
-          font-size: 20px !important;
-        }
-        .swiper-pagination-bullet {
-          background: #a855f7 !important;
-          opacity: 0.5 !important;
-        }
-        .swiper-pagination-bullet-active {
-          opacity: 1 !important;
-        }
-      `}</style>
       </div>
-    </HeroHighlight>
+    </div>
   );
 };
 

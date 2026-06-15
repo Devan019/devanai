@@ -9,7 +9,7 @@ import { FlipWords } from './ui/flip-words';
 
 const Hero = () => {
 
-
+  const videoUrl = "https://cdn.zennvid.tech/devanai/bg.mp4"
   const words = ["Portfolio", "DevLab", "Hackfolio"];
 
   const router =  useRouter()
@@ -23,7 +23,7 @@ const Hero = () => {
         playsInline
         className="absolute w-full h-full object-cover z-0"
       >
-        <source src="/video/bg.mp4" type="video/mp4" />
+        <source src={videoUrl} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 

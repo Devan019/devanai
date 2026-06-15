@@ -2,12 +2,15 @@ import React from "react";
 import { Timeline } from "@/components/ui/timeline";
 
 export function MyLife() {
+  const fgif = "https://cdn.zennvid.tech/devanai/characters/1st.gif";
+  const sgif = "https://cdn.zennvid.tech/devanai/characters/12.gif";
+
   const timelineData = [
     // 1️⃣ First Year
     {
       title: "First Year College",
       period: "Aug 2023 – May 2024",
-      url: "/characters/12.gif",
+      url: sgif,
       content: (
         <div className="">
           <p className="mb-4 w-[75%] text-lg font-normal text-neutral-200">
@@ -34,7 +37,7 @@ export function MyLife() {
     {
       title: "Joined GDG DDU Web Team",
       period: "Sep 2024 – Present",
-      url: "/characters/1st.gif",
+      url: fgif,
       content: (
         <div>
           <p className="mb-4 w-[75%] text-lg font-normal text-neutral-200">
@@ -61,7 +64,7 @@ export function MyLife() {
     {
       title: "Holboxathon 2025 - Consolation Prize 🏆",
       period: "May 2025",
-      url: "/characters/12.gif",
+      url: sgif,
       content: (
         <div>
           <p className="mb-4 w-[75%] text-lg font-normal text-neutral-200">
@@ -92,7 +95,7 @@ export function MyLife() {
     {
       title: "Frontend Developer (Freelance) – Techno College, Lucknow",
       period: "June 2025 – July 2025",
-      url: "/characters/1st.gif",
+      url: fgif,
       content: (
         <div>
           <p className="mb-4 w-[75%] text-lg font-normal text-neutral-200">
@@ -120,7 +123,7 @@ export function MyLife() {
     {
       title: "Third Year – Advanced Development & AI Exploration",
       period: "Aug 2025 – Present",
-      url: "/characters/12.gif",
+      url: sgif,
       content: (
         <div>
           <p className="mb-4 w-[75%] text-lg font-normal text-neutral-200">

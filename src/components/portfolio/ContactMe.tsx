@@ -1,51 +1,72 @@
 "use client"
-// import { useState } from 'react';
 import { motion } from 'framer-motion';
-import {  FiPhone, FiMapPin, FiLinkedin, FiGithub, FiYoutube } from 'react-icons/fi';
-import { AuroraBackground } from '../ui/aurora-background';
-// import { Label } from '../ui/label';
-// import { Input } from '../ui/input';
-// import { Textarea } from '../ui/Textarea';
+import { FiPhone, FiMapPin, FiLinkedin, FiGithub, FiYoutube } from 'react-icons/fi';
 import { MailIcon } from 'lucide-react';
 import { IconBrandLeetcode } from '@tabler/icons-react';
 
 export default function ContactPage() {
-  // const [name, setName] = useState('');
-  // const [email, setEmail] = useState('');
-  // const [message, setMessage] = useState('');
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1, delayChildren: 0.2 }
+    }
+  };
 
-  // const handleSubmit = (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   // Handle form submission
-  //   console.log({ name, email, message });
-  // };
+  const itemVariants = {
+    hidden: { opacity: 0, y: 16 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } }
+  };
 
   return (
-    // <WavyBackground className=" w-screen mx-auto min-h-screen overflow-x-hidden">
-    <AuroraBackground className='h-full w-full'>
-      <div className="w-full z-50 transition-colors duration-300">
+    <div
+      className="w-full min-h-[60vh] relative"
+      style={{ backgroundColor: 'var(--portfolio-bg)' }}
+    >
+      {/* Grid pattern */}
+      <div
+        className="absolute inset-0"
+        style={{
+          opacity: 'var(--portfolio-grid-opacity)',
+          backgroundSize: '40px 40px',
+          backgroundImage: 'linear-gradient(to right, var(--portfolio-grid-color) 1px, transparent 1px), linear-gradient(to bottom, var(--portfolio-grid-color) 1px, transparent 1px)',
+        }}
+      />
+
+      <div className="w-full z-10 relative transition-colors duration-300">
         <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h1 className="text-4xl font-bold  text-white mb-4  md:text-5xl lg:text-6xl">
+            <h1
+              className="text-4xl font-bold mb-4 md:text-5xl lg:text-6xl"
+              style={{ color: 'var(--portfolio-text)' }}
+            >
               Get in Touch
             </h1>
-            <p className="text-lg text-gray-300">
+            <p
+              className="text-lg"
+              style={{ color: 'var(--portfolio-text-secondary)' }}
+            >
               Have a project in mind or want to collaborate? Drop me a message!
             </p>
           </motion.div>
 
-          <div className="flex flex-wrap justify-center items-center w-full">
-            
+          <motion.div
+            className="flex flex-wrap justify-center items-center w-full"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative rounded-xl overflow-hidden shadow-2xl w-full lg:w-[60%] mb-8 lg:mb-0 lg:mr-8"
+              variants={itemVariants}
+              className="relative rounded-xl overflow-hidden w-full lg:w-[60%] mb-8 lg:mb-0 lg:mr-8"
+              style={{
+                border: '1px solid var(--portfolio-card-border)',
+              }}
             >
               <div className="h-full w-full">
                 <iframe
@@ -57,90 +78,148 @@ export default function ContactPage() {
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
-                
-                
               </div>
 
               {/* Contact Info Below Map */}
-              <div className="p-6 bg-gray-900 flex justify-center items-center">
-                <div className="flex flex-wrap gap-4 justify-center items-center">
+              <div
+                className="p-6 flex justify-center items-center"
+                style={{ backgroundColor: 'var(--portfolio-card)' }}
+              >
+                <motion.div
+                  className="flex flex-wrap gap-4 justify-center items-center"
+                  variants={containerVariants}
+                >
                   <motion.div
-                    whileHover={{ scale: 1.03 }}
-                    className="p-4 rounded-lg bg-gray-800 flex items-center"
+                    variants={itemVariants}
+                    whileHover={{ scale: 1.02 }}
+                    className="p-4 rounded-lg flex items-center transition-colors"
+                    style={{
+                      backgroundColor: 'var(--portfolio-surface)',
+                      border: '1px solid var(--portfolio-card-border)',
+                    }}
                   >
-                    <MailIcon className="text-xl mr-3 text-blue-400" />
+                    <MailIcon className="text-xl mr-3" style={{ color: 'var(--portfolio-accent)' }} />
                     <div>
-                      <p className="text-sm text-gray-400">Email</p>
-                      <p className="font-medium text-white">devanchauhan012@gmail.com</p>
+                      <p className="text-sm" style={{ color: 'var(--portfolio-text-secondary)' }}>Email</p>
+                      <p className="font-medium" style={{ color: 'var(--portfolio-text)' }}>devanchauhan012@gmail.com</p>
                     </div>
                   </motion.div>
 
                   <motion.div
-                    whileHover={{ scale: 1.03 }}
-                    className=" p-4 rounded-lg bg-gray-800 flex items-center"
+                    variants={itemVariants}
+                    whileHover={{ scale: 1.02 }}
+                    className="p-4 rounded-lg flex items-center transition-colors"
+                    style={{
+                      backgroundColor: 'var(--portfolio-surface)',
+                      border: '1px solid var(--portfolio-card-border)',
+                    }}
                   >
-                    <FiPhone className="text-xl mr-3 text-blue-400" />
+                    <FiPhone className="text-xl mr-3" style={{ color: 'var(--portfolio-accent)' }} />
                     <div>
-                      <p className="text-sm text-gray-400">Phone</p>
-                      <p className="font-medium text-white">+91 90232 40018</p>
+                      <p className="text-sm" style={{ color: 'var(--portfolio-text-secondary)' }}>Phone</p>
+                      <p className="font-medium" style={{ color: 'var(--portfolio-text)' }}>+91 90232 40018</p>
                     </div>
                   </motion.div>
 
                   <motion.div
-                    whileHover={{ scale: 1.03 }}
-                    className="p-4 rounded-lg bg-gray-800 flex items-center"
+                    variants={itemVariants}
+                    whileHover={{ scale: 1.02 }}
+                    className="p-4 rounded-lg flex items-center transition-colors"
+                    style={{
+                      backgroundColor: 'var(--portfolio-surface)',
+                      border: '1px solid var(--portfolio-card-border)',
+                    }}
                   >
-                    <FiMapPin className="text-xl mr-3 text-blue-400" />
+                    <FiMapPin className="text-xl mr-3" style={{ color: 'var(--portfolio-accent)' }} />
                     <div>
-                      <p className="text-sm text-gray-400">Address</p>
-                      <p className="font-medium text-white">12, Venetian Vill, bardoli</p>
+                      <p className="text-sm" style={{ color: 'var(--portfolio-text-secondary)' }}>Address</p>
+                      <p className="font-medium" style={{ color: 'var(--portfolio-text)' }}>12, Venetian Vill, bardoli</p>
                     </div>
                   </motion.div>
 
                   <div className="flex items-center justify-center space-x-4 col-span-2">
                     <motion.a
-                      whileHover={{ scale: 1.2, rotate: 15 }}
+                      whileHover={{ scale: 1.1 }}
                       href="https://youtube.com/@Devan-en3tn"
                       target="_blank"
-                      className="p-3 rounded-full  bg-gray-800 hover:bg-pink-600"
+                      className="p-3 rounded-full transition-colors"
+                      style={{
+                        backgroundColor: 'var(--portfolio-surface)',
+                        border: '1px solid var(--portfolio-card-border)',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.borderColor = 'var(--portfolio-accent)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.borderColor = 'var(--portfolio-card-border)';
+                      }}
                     >
-                      <FiYoutube className="text-xl text-pink-400" />
+                      <FiYoutube className="text-xl" style={{ color: 'var(--portfolio-accent)' }} />
                     </motion.a>
                     
                     <motion.a
-                      whileHover={{ scale: 1.2, rotate: 15 }}
+                      whileHover={{ scale: 1.1 }}
                       href="https://www.linkedin.com/in/devan-chauhan"
                       target="_blank"
-                      className="p-3 rounded-full  bg-gray-800 hover:bg-blue-700"
+                      className="p-3 rounded-full transition-colors"
+                      style={{
+                        backgroundColor: 'var(--portfolio-surface)',
+                        border: '1px solid var(--portfolio-card-border)',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.borderColor = 'var(--portfolio-accent)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.borderColor = 'var(--portfolio-card-border)';
+                      }}
                     >
-                      <FiLinkedin className="text-xl text-blue-400" />
+                      <FiLinkedin className="text-xl" style={{ color: 'var(--portfolio-accent)' }} />
                     </motion.a>
+
                     <motion.a
-                      whileHover={{ scale: 1.2, rotate: 15 }}
+                      whileHover={{ scale: 1.1 }}
                       href="https://github.com/Devan019"
                       target="_blank"
-                      className="p-3 rounded-full bg-gray-800 hover:bg-gray-600"
+                      className="p-3 rounded-full transition-colors"
+                      style={{
+                        backgroundColor: 'var(--portfolio-surface)',
+                        border: '1px solid var(--portfolio-card-border)',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.borderColor = 'var(--portfolio-accent)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.borderColor = 'var(--portfolio-card-border)';
+                      }}
                     >
-                      <FiGithub className="text-xl" />
+                      <FiGithub className="text-xl" style={{ color: 'var(--portfolio-accent)' }} />
                     </motion.a>
+
                     <motion.a
-                      whileHover={{ scale: 1.2, rotate: 15 }}
+                      whileHover={{ scale: 1.1 }}
                       href="https://leetcode.com/u/devanchauhan012/"
                       target="_blank"
-                      className="p-3 rounded-full bg-gray-800 hover:bg-yellow-600"
+                      className="p-3 rounded-full transition-colors"
+                      style={{
+                        backgroundColor: 'var(--portfolio-surface)',
+                        border: '1px solid var(--portfolio-card-border)',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.borderColor = 'var(--portfolio-accent)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.borderColor = 'var(--portfolio-card-border)';
+                      }}
                     >
-                      <IconBrandLeetcode className="text-xltext-yellow-400" />
+                      <IconBrandLeetcode className="text-xl" style={{ color: 'var(--portfolio-accent)' }} />
                     </motion.a>
                   </div>
-                </div>
+                </motion.div>
               </div>
             </motion.div>
-
-            
-          </div>
+          </motion.div>
         </div>
       </div>
-    </AuroraBackground>
-    // </WavyBackground>
+    </div>
   );
 }

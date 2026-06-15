@@ -1,20 +1,17 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { useTheme } from 'next-themes';
 import { useRouter, usePathname } from 'next/navigation';
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState('profile');
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const { theme } = useTheme();
   const router = useRouter();
   const pathname = usePathname();
 
   // Debounce scroll handler
   useEffect(() => {
-    console.log("in thus ")
     let timeoutId: NodeJS.Timeout;
 
     const scrollLogic = () => {
@@ -75,13 +72,7 @@ const Navbar = () => {
   }, []);
 
   const handleResumeDownload = () => {
-    const resumeUrl = '/resume.pdf';
-    const link = document.createElement('a');
-    link.href = resumeUrl;
-    link.download = 'devanResume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    window.open('https://cdn.zennvid.tech/devanai/devan-resume.pdf', '_blank');
   };
 
   const navItems = [
@@ -113,13 +104,16 @@ const Navbar = () => {
 
   return (
     <motion.nav
-      className={`fixed top-0  md:w-full w-screen z-[99] transition-all duration-300 ${scrolled ? 'py-2' : 'py-4'} bg-black/90  backdrop-blur-md'}`}
-      // initial={{ y: -100 }}
+      className={`fixed top-0 md:w-full w-screen z-[99] transition-all duration-300 ${scrolled ? 'py-2' : 'py-4'} backdrop-blur-md`}
+      style={{
+        backgroundColor: 'color-mix(in srgb, var(--portfolio-bg) 90%, transparent)',
+        borderBottom: scrolled ? '1px solid var(--portfolio-card-border)' : '1px solid transparent',
+      }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
       <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 ">
-        <div className="flex w-full  justify-between items-center h-16">
+        <div className="flex w-full justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
             <motion.div
@@ -131,7 +125,8 @@ const Navbar = () => {
                   window.history.pushState(null, '', '/portfolio');
                 }
               }}
-              className={`hover:cursor-pointer text-xl font-bold text-purple-400 `}
+              className="hover:cursor-pointer text-xl font-bold"
+              style={{ color: 'var(--portfolio-accent)' }}
               whileHover={{ scale: 1.05 }}
             >
               DevanAI
@@ -143,16 +138,28 @@ const Navbar = () => {
             {navItems.map((item) => (
               <motion.button
                 key={item.id}
-                className={`relative px-3 py-2 text-sm font-medium transition-colors ${theme == "dark" ?
-                  (activeSection === item.id ? 'text-purple-400' : 'text-purple-300 hover:text-purple-300') :
-                  (activeSection === item.id ? 'text-purple-600' : 'text-purple-400 hover:text-purple-500')}`}
+                className="relative px-3 py-2 text-sm font-medium transition-colors"
+                style={{
+                  color: activeSection === item.id ? 'var(--portfolio-accent)' : 'var(--portfolio-text-secondary)',
+                }}
                 onClick={() => scrollToSection(item.id)}
                 whileHover={{ scale: 1.05 }}
+                onMouseEnter={(e) => {
+                  if (activeSection !== item.id) {
+                    e.currentTarget.style.color = 'var(--portfolio-text)';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (activeSection !== item.id) {
+                    e.currentTarget.style.color = 'var(--portfolio-text-secondary)';
+                  }
+                }}
               >
                 {item.label}
                 {activeSection === item.id && (
                   <motion.span
-                    className={`absolute bottom-0 left-0 w-full h-0.5 ${theme == "dark" ? 'bg-purple-400' : 'bg-purple-600'}`}
+                    className="absolute bottom-0 left-0 w-full h-0.5"
+                    style={{ backgroundColor: 'var(--portfolio-accent)' }}
                     layoutId="navUnderline"
                     transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
                   />
@@ -161,10 +168,13 @@ const Navbar = () => {
             ))}
 
             <motion.button
-              className={`px-4 py-2 rounded-lg ${theme == "dark" ? 'bg-purple-600 hover:bg-purple-700 text-white' : 'bg-purple-500 hover:bg-purple-600 text-white'} font-medium transition-colors`}
+              className="px-4 py-2 rounded-lg font-medium transition-colors text-white"
+              style={{ backgroundColor: 'var(--portfolio-accent)' }}
               onClick={handleResumeDownload}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#9333ea'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'var(--portfolio-accent)'; }}
             >
               Resume
             </motion.button>
@@ -173,7 +183,8 @@ const Navbar = () => {
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center ">
             <motion.button
-              className={`p-2 rounded-md ${theme == "dark" ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'} focus:outline-none`}
+              className="p-2 rounded-md focus:outline-none"
+              style={{ color: 'var(--portfolio-text-secondary)' }}
               onClick={() => setMenuOpen(!menuOpen)}
               whileTap={{ scale: 0.9 }}
             >
@@ -192,7 +203,7 @@ const Navbar = () => {
       {/* Mobile Navigation */}
       {menuOpen && (
         <motion.div
-          className={`md:hidden bg-gray-800 shadow-lg `}
+          style={{ backgroundColor: 'var(--portfolio-card)' }}
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 'auto' }}
           exit={{ opacity: 0, height: 0 }}
@@ -202,9 +213,11 @@ const Navbar = () => {
             {navItems.map((item) => (
               <motion.button
                 key={item.id}
-                className={`block px-3 py-2 rounded-md text-base font-medium w-full text-left ${theme == "dark" ?
-                  (activeSection === item.id ? 'bg-gray-900 text-purple-400' : 'text-gray-300 hover:bg-gray-700 hover:text-white') :
-                  (activeSection === item.id ? ' text-purple-600' : 'text-purple-400 hover:bg-gray-100 hover:text-gray-900')}`}
+                className="block px-3 py-2 rounded-md text-base font-medium w-full text-left transition-colors"
+                style={{
+                  backgroundColor: activeSection === item.id ? 'var(--portfolio-accent-soft)' : 'transparent',
+                  color: activeSection === item.id ? 'var(--portfolio-accent)' : 'var(--portfolio-text-secondary)',
+                }}
                 onClick={() => scrollToSection(item.id)}
                 whileHover={{ scale: 1.02 }}
               >
@@ -213,7 +226,8 @@ const Navbar = () => {
             ))}
 
             <motion.button
-              className={`block w-full px-3 py-2 rounded-md text-base font-medium text-left ${theme == "dark" ? 'bg-purple-600 hover:bg-purple-700 text-white' : 'bg-purple-500 hover:bg-purple-600 text-white'}`}
+              className="block w-full px-3 py-2 rounded-md text-base font-medium text-left text-white"
+              style={{ backgroundColor: 'var(--portfolio-accent)' }}
               onClick={handleResumeDownload}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}

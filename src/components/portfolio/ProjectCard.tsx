@@ -1,5 +1,6 @@
 import { Project } from "@/data/projects.data";
 import { motion } from "framer-motion";
+
 const ProjectCard = ({ project }: { project: Project }) => {
   return (
     <motion.div
@@ -7,9 +8,16 @@ const ProjectCard = ({ project }: { project: Project }) => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.3 }}
-      className="relative overflow-hidden rounded-xl shadow-lg group"
+      className="relative overflow-hidden rounded-xl group"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 opacity-60"></div>
+      {/* Subtle accent gradient overlay */}
+      <div
+        className="absolute inset-0 opacity-60"
+        style={{
+          background: 'linear-gradient(135deg, var(--portfolio-accent), #7c3aed)',
+        }}
+      />
+
       <div className="relative z-10 p-6 h-full">
         <div className="flex justify-between items-start mb-4">
           <div>
@@ -70,12 +78,14 @@ const ProjectCard = ({ project }: { project: Project }) => {
           </div>
         </div>
       </div>
+
+      {/* Background image overlay */}
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-20 group-hover:opacity-30 transition-opacity duration-300"
+        className="absolute inset-0 bg-cover bg-center opacity-15 group-hover:opacity-25 transition-opacity duration-300"
         style={{ backgroundImage: `url(${project.imageUrl})` }}
-      ></div>
+      />
     </motion.div>
   );
 };
 
-export default ProjectCard
+export default ProjectCard;

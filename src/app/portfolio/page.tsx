@@ -7,7 +7,7 @@ import Skills from "@/components/portfolio/Skill";
 
 const page = () => {
   return (
-    <div className="min-h-screen overflow-x-hidden scroll-smooth bg-black">
+    <div className="min-h-screen overflow-x-hidden scroll-smooth" style={{ backgroundColor: 'var(--portfolio-bg)' }}>
       <div id="profile" className="min-h-screen relative">
         <Profile />
       </div>

@@ -1,6 +1,5 @@
 @import "tailwindcss";
-/* @import "tw-animate-css"; */
-@custom-variant dark (&:where(.dark, .dark *));
+
 
 @theme inline {
   --color-background: var(--background);
@@ -141,21 +140,38 @@
 }
 
 
+/* Portfolio unified theme — dark only */
+:root {
+  --portfolio-bg: #0a0a0f;
+  --portfolio-surface: #12121a;
+  --portfolio-surface-hover: #1a1a28;
+  --portfolio-card: #16161f;
+  --portfolio-card-border: #2a2a3a;
+  --portfolio-text: #e8e8f0;
+  --portfolio-text-secondary: #9898b0;
+  --portfolio-accent: #a855f7;
+  --portfolio-accent-soft: rgba(168, 85, 247, 0.1);
+  --portfolio-accent-border: rgba(168, 85, 247, 0.25);
+  --portfolio-grid-opacity: 0.15;
+  --portfolio-grid-color: #3a3a4a;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-gray-800;
+  background: var(--portfolio-surface);
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-purple-500 rounded-full;
+  background: var(--portfolio-accent);
+  border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-purple-600;
+  background: #9333ea;
 }
 
 @layer components {

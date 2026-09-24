@@ -72,7 +72,7 @@ const Navbar = () => {
   }, []);
 
   const handleResumeDownload = () => {
-    window.open('https://cdn.zennvid.tech/devanai/devan-resume.pdf', '_blank');
+    window.open('https://docs.google.com/document/d/1dr7OqfSr_3UpAIQY4Gd9Wnpk_awQTzp-B0UO9IsTaiM/edit?tab=t.0', '_blank');
   };
 
   const navItems = [
